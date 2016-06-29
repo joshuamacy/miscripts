@@ -1,0 +1,21 @@
+#useful commands:
+#::n skip n-1 lines before reading data
+
+set term png
+set output "~/Work/Sandbox/1HH2555"
+
+set datafile separator " "
+set title "1 CM 25-55: Azimuthal Sweep"
+set xrange[1000:4000]
+set yrange[-110:10]
+set xlabel "Frequency (MHz)"
+set ylabel "Power (dBm)"
+set key title "Phi Anlge"
+set style data linespoints
+
+plot "~/Desktop/TXT/1_cm/LM-HH-1_25_55_0.txt" u 6:9 w lines lt rgb "blue" title "0",\
+"~/Desktop/TXT/1_cm/LM-HH-1_25_55_30.txt" u 6:9 w lines lt rgb "red" title "30",\
+"~/Desktop/TXT/1_cm/LM-HH-1_25_55_60.txt" u 6:9 w lines lt rgb "green" title "60",\
+"~/Desktop/TXT/1_cm/LM-HH-1_25_55_90.txt" u 6:9 w lines lt rgb "purple" title "90"
+
+pause -1 "Hit any key to continue"
