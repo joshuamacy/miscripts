@@ -1,0 +1,12 @@
+#This script plots csv files from the IDL's 2GHz scope
+
+set datafile separator ","
+set font "Helvectiva"
+set terminal png font "texgyrepagella-regular.otf" 12
+set output "~/Pictures/160629_165138.png"
+set title ""
+set xlabel "Time (s)"
+set ylabel "Volts (V)"
+set xrange[-2.e-8:8.e-8]
+
+plot "~/160629_165138.csv" u 4:5 w lines lt rgb "black"
